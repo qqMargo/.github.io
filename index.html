@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Huitian Liu | Academic Homepage</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --surface: rgba(255,255,255,0.82);
+      --text: #16324f;
+      --muted: #5d6f82;
+      --accent: #1d4e89;
+      --accent-soft: #dfeaf6;
+      --line: rgba(22, 50, 79, 0.12);
+      --shadow: 0 18px 50px rgba(20, 40, 80, 0.10);
+      --radius: 22px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(29,78,137,0.10), transparent 32%),
+        radial-gradient(circle at top right, rgba(29,78,137,0.08), transparent 26%),
+        var(--bg);
+      line-height: 1.65;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(14px);
+      background: rgba(245,247,251,0.82);
+      border-bottom: 1px solid rgba(22, 50, 79, 0.08);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      padding: 72px 0 42px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.9fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+    }
+
+    .hero-main {
+      padding: 42px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.84rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .subtitle {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 760px;
+      margin-bottom: 22px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn.secondary {
+      background: white;
+      color: var(--accent);
+    }
+
+    .btn:hover {
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .hero-side {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .avatar {
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1d4e89, #4c7cb5);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin-bottom: 12px;
+    }
+
+    .mini-title {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .section {
+      padding: 16px 0 6px;
+    }
+
+    .section-card {
+      padding: 30px;
+      margin-bottom: 22px;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: 1.55rem;
+      letter-spacing: -0.02em;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .item + .item {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+
+    .item h3 {
+      margin: 0 0 6px;
+      font-size: 1.02rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+
+    ul.clean {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      padding: 9px 12px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+
+    .footer {
+      padding: 26px 0 42px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-main, .hero-side, .section-card {
+        padding: 24px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero {
+        padding-top: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Huitian Liu</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#awards">Awards</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <section class="card hero-main">
+        <div class="eyebrow">Academic Homepage</div>
+        <h1>Huitian Liu</h1>
+        <p class="subtitle">
+          PhD candidate in Transportation Engineering at Chang’an University, working on vehicle life-cycle carbon emissions,
+          road transport decarbonisation, and transport policy analysis.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="mailto:huitian.liu@chd.edu.cn">Email Me</a>
+          <a class="btn secondary" href="#publications">View Publications</a>
+        </div>
+      </section>
+
+      <aside class="card hero-side">
+        <div>
+          <div class="avatar">HL</div>
+          <div class="mini-title">Current Position</div>
+          <div>Second-year PhD candidate</div>
+          <div class="meta">College of Transportation Engineering, Chang’an University</div>
+        </div>
+        <div>
+          <div class="mini-title">Research Interests</div>
+          <div class="tag-list">
+            <span class="tag">Transport decarbonisation</span>
+            <span class="tag">Life-cycle assessment</span>
+            <span class="tag">Vehicle carbon emissions</span>
+            <span class="tag">Transport policy</span>
+            <span class="tag">Machine learning</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about" class="section">
+      <div class="card section-card">
+        <h2>About</h2>
+        <p>
+          I am a doctoral researcher in Transport Planning and Management at Chang’an University, supervised by Prof. Dawei Hu.
+          My work focuses on measuring and analysing carbon emissions across the full life cycle of vehicles, with a particular
+          interest in fuel vehicle restriction policies, urban transport carbon accounting, and data-driven modelling approaches.
+        </p>
+      </div>
+    </section>
+
+    <section id="research" class="section">
+      <div class="grid-2">
+        <div class="card section-card">
+          <h2>Education</h2>
+          <div class="item">
+            <h3>Chang’an University</h3>
+            <div class="meta">Sep 2019 – Present · Xi’an, China</div>
+            <div>Master and PhD in Transport Planning and Management</div>
+            <div class="meta">GPA: 88.21/100 (3.74/4.0) · Ranking: 3/7</div>
+          </div>
+          <div class="item">
+            <h3>Shandong University of Science and Technology</h3>
+            <div class="meta">Sep 2015 – Jul 2019 · Qingdao, China</div>
+            <div>B.E. in Geotechnical and Tunnel Engineering</div>
+            <div class="meta">GPA: 87.11/100 (3.63/4.0) · Ranking: 5/46</div>
+          </div>
+        </div>
+
+        <div class="card section-card">
+          <h2>Skills</h2>
+          <div class="tag-list">
+            <span class="tag">Python</span>
+            <span class="tag">MATLAB</span>
+            <span class="tag">Gurobi</span>
+            <span class="tag">Lingo</span>
+            <span class="tag">GREET</span>
+            <span class="tag">LEAP</span>
+            <span class="tag">GAMS</span>
+            <span class="tag">English (CET-6)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="card section-card">
+        <h2>Selected Projects</h2>
+        <div class="item">
+          <h3>Life Cycle Carbon Emission Measurement of Vehicles and Analysis of Fuel Vehicle Purchase Restriction Policy</h3>
+          <div class="meta">Doctoral Thesis</div>
+          <div>Analysis of carbon emissions from production to end-of-life, combined with programme research based on policy objectives.</div>
+        </div>
+        <div class="item">
+          <h3>Carbon Emission Measurement Method for Road Transport Vehicles in Xi’an City and the Policy of Banning the Sale of Fuel Cars</h3>
+          <div>Spatial measurement analysis of road transport carbon emissions in Xi’an and policy analysis for fuel car restrictions.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" class="section">
+      <div class="card section-card">
+        <h2>Publications</h2>
+        <div class="item">
+          <h3>Construction and Analysis of Transportation Carbon Emission Prediction Model Based on Machine Learning</h3>
+          <div class="meta">Huitian Liu &amp; Dawei Hu · Environmental Science, 2023 · Under review</div>
+        </div>
+        <div class="item">
+          <h3>Carbon Emission Measurement Method of Road Transport Vehicles and Prohibition Policy Analysis of Fuel Vehicle</h3>
+          <div class="meta">Huitian Liu &amp; Dawei Hu · Transport Research, 2022</div>
+          <div>DOI: 10.16503/j.cnki.2095-9931.2022.06.005</div>
+        </div>
+        <div class="item">
+          <h3>Vulnerability Analysis of Highway Networks in Shaanxi Province Based on Complex Networks</h3>
+          <div class="meta">Bo Li, Zhizheng Li &amp; Huitian Liu · Journal of Chongqing Jiaotong University, 2022</div>
+        </div>
+        <div class="item">
+          <h3>Research on the Truck-UAV Joint Distribution Route in the Initial Stage of Emergency Response</h3>
+          <div class="meta">Dawei Hu, Shipeng Zhang, Huitian Liu &amp; Yin Wang · Journal of Chang’an University, 2022 · Under review</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid-2">
+        <div id="awards" class="card section-card">
+          <h2>Awards</h2>
+          <ul class="clean">
+            <li>Second Class Scholarship for Undergraduates (Top 20%), 2016, 2017, 2018</li>
+            <li>Second Class Scholarship for Masters (Top 20%), 2020</li>
+            <li>Second Class Scholarship for PhD (Top 20%), 2021</li>
+            <li>Second Class Scholarship for PhD (Top 20%), 2022</li>
+          </ul>
+        </div>
+
+        <div class="card section-card">
+          <h2>Conference</h2>
+          <div class="item">
+            <h3>World Transport Convention</h3>
+            <div>An OPEM model-based approach to measuring carbon emissions from road transport vehicles in China.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="card section-card">
+        <h2>Contact</h2>
+        <p>
+          <strong>Email:</strong> <a href="mailto:huitian.liu@chd.edu.cn">huitian.liu@chd.edu.cn</a><br>
+          <strong>Phone:</strong> +86-15902956628<br>
+          <strong>Location:</strong> Xi’an, China
+        </p>
+        <p>
+          This website is designed as a simple academic homepage and can be hosted for free with GitHub Pages.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <div>© 2026 Huitian Liu · Academic personal website</div>
+  </footer>
+</body>
+</html>
