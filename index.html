@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Huitian Liu | Academic Homepage</title>
+  <title>Huitian Liu | Academic Website</title>
   <style>
     :root {
       --bg: #f5f7fb;
-      --surface: rgba(255,255,255,0.82);
+      --surface: rgba(255,255,255,0.88);
       --text: #16324f;
       --muted: #5d6f82;
       --accent: #1d4e89;
@@ -18,9 +18,13 @@
       --max: 1120px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -33,8 +37,14 @@
       line-height: 1.65;
     }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
 
     .container {
       width: min(calc(100% - 32px), var(--max));
@@ -158,18 +168,28 @@
       gap: 18px;
     }
 
-    .avatar {
-      width: 92px;
-      height: 92px;
+    .profile-wrap {
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .profile-photo {
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #1d4e89, #4c7cb5);
-      color: white;
-      display: grid;
-      place-items: center;
-      font-size: 2rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      margin-bottom: 12px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      margin: 0 auto 14px;
+      border: 4px solid white;
+      box-shadow: 0 10px 28px rgba(20, 40, 80, 0.18);
+      background: #e9eef5;
+    }
+
+    .photo-note {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.5;
     }
 
     .mini-title {
@@ -245,11 +265,14 @@
     }
 
     @media (max-width: 900px) {
-      .hero-grid, .grid-2 {
+      .hero-grid,
+      .grid-2 {
         grid-template-columns: 1fr;
       }
 
-      .hero-main, .hero-side, .section-card {
+      .hero-main,
+      .hero-side,
+      .section-card {
         padding: 24px;
       }
     }
@@ -263,6 +286,11 @@
       .hero {
         padding-top: 32px;
       }
+
+      .profile-photo {
+        width: 130px;
+        height: 130px;
+      }
     }
   </style>
 </head>
@@ -272,7 +300,7 @@
       <div class="brand">Huitian Liu</div>
       <div class="nav-links">
         <a href="#about">About</a>
-        <a href="#research">Research</a>
+        <a href="#research">Education & Skills</a>
         <a href="#publications">Publications</a>
         <a href="#projects">Projects</a>
         <a href="#awards">Awards</a>
@@ -287,7 +315,8 @@
         <div class="eyebrow">Academic Homepage</div>
         <h1>Huitian Liu</h1>
         <p class="subtitle">
-          PhD candidate in Transportation Engineering at Chang’an University, working on vehicle life-cycle carbon emissions,
+          Final-year PhD candidate in the College of Transportation Engineering, Chang’an University,
+          expected to graduate in June 2026, focusing on vehicle life-cycle carbon emissions,
           road transport decarbonisation, and transport policy analysis.
         </p>
         <div class="cta-row">
@@ -298,11 +327,16 @@
 
       <aside class="card hero-side">
         <div>
-          <div class="avatar">HL</div>
+          <div class="profile-wrap">
+            <img src="images/huitian-liu.png" alt="Huitian Liu" class="profile-photo">
+          </div>
+
           <div class="mini-title">Current Position</div>
-          <div>Second-year PhD candidate</div>
+          <div>Final-year PhD candidate</div>
           <div class="meta">College of Transportation Engineering, Chang’an University</div>
+          <div class="meta">Expected graduation: June 2026</div>
         </div>
+
         <div>
           <div class="mini-title">Research Interests</div>
           <div class="tag-list">
@@ -322,9 +356,10 @@
       <div class="card section-card">
         <h2>About</h2>
         <p>
-          I am a doctoral researcher in Transport Planning and Management at Chang’an University, supervised by Prof. Dawei Hu.
-          My work focuses on measuring and analysing carbon emissions across the full life cycle of vehicles, with a particular
-          interest in fuel vehicle restriction policies, urban transport carbon accounting, and data-driven modelling approaches.
+          I am a final-year PhD candidate in the College of Transportation Engineering at Chang’an University,
+          supervised by Prof. Dawei Hu. My research focuses on life-cycle carbon emission measurement of vehicles,
+          carbon accounting for road transport systems, and policy analysis related to fuel vehicle restriction
+          and transport decarbonisation.
         </p>
       </div>
     </section>
@@ -335,15 +370,15 @@
           <h2>Education</h2>
           <div class="item">
             <h3>Chang’an University</h3>
-            <div class="meta">Sep 2019 – Present · Xi’an, China</div>
+            <div class="meta">Sep 2019 – Jun 2026 · Xi’an, China</div>
             <div>Master and PhD in Transport Planning and Management</div>
-            <div class="meta">GPA: 88.21/100 (3.74/4.0) · Ranking: 3/7</div>
+            <div class="meta">General GPA: 88.21/100 (3.74/4.0) · Ranking: 3/7</div>
           </div>
           <div class="item">
             <h3>Shandong University of Science and Technology</h3>
             <div class="meta">Sep 2015 – Jul 2019 · Qingdao, China</div>
             <div>B.E. in Geotechnical and Tunnel Engineering</div>
-            <div class="meta">GPA: 87.11/100 (3.63/4.0) · Ranking: 5/46</div>
+            <div class="meta">General GPA: 87.11/100 (3.63/4.0) · Ranking: 5/46</div>
           </div>
         </div>
 
@@ -357,7 +392,7 @@
             <span class="tag">GREET</span>
             <span class="tag">LEAP</span>
             <span class="tag">GAMS</span>
-            <span class="tag">English (CET-6)</span>
+            <span class="tag">CET-6 English</span>
           </div>
         </div>
       </div>
@@ -369,11 +404,17 @@
         <div class="item">
           <h3>Life Cycle Carbon Emission Measurement of Vehicles and Analysis of Fuel Vehicle Purchase Restriction Policy</h3>
           <div class="meta">Doctoral Thesis</div>
-          <div>Analysis of carbon emissions from production to end-of-life, combined with programme research based on policy objectives.</div>
+          <div>
+            Analysis of carbon emissions from production to end-of-life, together with programme research
+            based on policy objectives.
+          </div>
         </div>
         <div class="item">
           <h3>Carbon Emission Measurement Method for Road Transport Vehicles in Xi’an City and the Policy of Banning the Sale of Fuel Cars</h3>
-          <div>Spatial measurement analysis of road transport carbon emissions in Xi’an and policy analysis for fuel car restrictions.</div>
+          <div>
+            Spatial measurement analysis of road transport carbon emissions in Xi’an and analysis of Xi’an’s
+            fuel car ban policy.
+          </div>
         </div>
       </div>
     </section>
@@ -417,7 +458,9 @@
           <h2>Conference</h2>
           <div class="item">
             <h3>World Transport Convention</h3>
-            <div>An OPEM model-based approach to measuring carbon emissions from road transport vehicles in China.</div>
+            <div>
+              An OPEM model-based approach to measuring carbon emissions from road transport vehicles in China.
+            </div>
           </div>
         </div>
       </div>
@@ -429,17 +472,17 @@
         <p>
           <strong>Email:</strong> <a href="mailto:huitian.liu@chd.edu.cn">huitian.liu@chd.edu.cn</a><br>
           <strong>Phone:</strong> +86-15902956628<br>
-          <strong>Location:</strong> Xi’an, China
+          <strong>Address:</strong> Middle part of the South 2nd Ring Road, Xi’an 710064, P.R. China
         </p>
         <p>
-          This website is designed as a simple academic homepage and can be hosted for free with GitHub Pages.
+          This site is a simple academic homepage designed for GitHub Pages and easy long-term maintenance.
         </p>
       </div>
     </section>
   </main>
 
   <footer class="container footer">
-    <div>© 2026 Huitian Liu · Academic personal website</div>
+    <div>© 2026 Huitian Liu · Academic website</div>
   </footer>
 </body>
 </html>
