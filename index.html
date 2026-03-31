@@ -3,48 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Huitian Liu | Academic Website</title>
+  <title>Huitian Liu | Academic Homepage</title>
+  <meta name="description" content="Academic homepage of Huitian Liu, PhD candidate in Transportation Engineering, focusing on transport decarbonisation, life-cycle assessment, and data-driven transport analysis." />
   <style>
     :root {
-      --bg: #f5f7fb;
-      --surface: rgba(255,255,255,0.88);
-      --text: #16324f;
-      --muted: #5d6f82;
-      --accent: #1d4e89;
-      --accent-soft: #dfeaf6;
-      --line: rgba(22, 50, 79, 0.12);
-      --shadow: 0 18px 50px rgba(20, 40, 80, 0.10);
+      --bg: #f4f7fb;
+      --surface: rgba(255,255,255,0.9);
+      --surface-strong: #ffffff;
+      --text: #18324a;
+      --muted: #607285;
+      --accent: #1f4f88;
+      --accent-2: #2e6fb5;
+      --accent-soft: #e4eef8;
+      --line: rgba(24, 50, 74, 0.1);
+      --shadow: 0 18px 50px rgba(18, 44, 78, 0.1);
       --radius: 22px;
-      --max: 1120px;
+      --max: 1160px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
       color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(29,78,137,0.10), transparent 32%),
-        radial-gradient(circle at top right, rgba(29,78,137,0.08), transparent 26%),
-        var(--bg);
       line-height: 1.65;
+      background:
+        radial-gradient(circle at top left, rgba(31,79,136,0.12), transparent 28%),
+        radial-gradient(circle at top right, rgba(31,79,136,0.08), transparent 24%),
+        var(--bg);
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
 
     .container {
       width: min(calc(100% - 32px), var(--max));
@@ -54,23 +46,24 @@
     .nav {
       position: sticky;
       top: 0;
-      z-index: 30;
+      z-index: 100;
       backdrop-filter: blur(14px);
-      background: rgba(245,247,251,0.82);
-      border-bottom: 1px solid rgba(22, 50, 79, 0.08);
+      background: rgba(244,247,251,0.84);
+      border-bottom: 1px solid rgba(24, 50, 74, 0.08);
     }
 
     .nav-inner {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 18px;
       padding: 14px 0;
     }
 
     .brand {
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 0.2px;
+      font-size: 1rem;
     }
 
     .nav-links {
@@ -81,12 +74,12 @@
     }
 
     .hero {
-      padding: 72px 0 42px;
+      padding: 72px 0 40px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.4fr 0.9fr;
+      grid-template-columns: 1.45fr 0.95fr;
       gap: 28px;
       align-items: stretch;
     }
@@ -94,8 +87,8 @@
     .card {
       background: var(--surface);
       border: 1px solid var(--line);
-      box-shadow: var(--shadow);
       border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
     .hero-main {
@@ -108,30 +101,42 @@
       border-radius: 999px;
       background: var(--accent-soft);
       color: var(--accent);
-      font-size: 0.84rem;
+      font-size: 0.83rem;
       font-weight: 700;
       margin-bottom: 16px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
 
     h1 {
-      margin: 0 0 10px;
-      font-size: clamp(2.2rem, 4vw, 3.6rem);
-      line-height: 1.08;
+      margin: 0 0 12px;
+      font-size: clamp(2.3rem, 4vw, 3.7rem);
+      line-height: 1.05;
       letter-spacing: -0.03em;
     }
 
     .subtitle {
+      margin: 0 0 18px;
       font-size: 1.08rem;
       color: var(--muted);
       max-width: 760px;
-      margin-bottom: 22px;
+    }
+
+    .hero-summary {
+      margin-top: 18px;
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .hero-summary p {
+      margin: 0 0 12px;
     }
 
     .cta-row {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 20px;
+      margin-top: 24px;
     }
 
     .btn {
@@ -142,16 +147,16 @@
       border-radius: 999px;
       border: 1px solid var(--accent);
       font-weight: 600;
-      transition: 0.2s ease;
+      transition: transform 0.18s ease, background 0.18s ease;
     }
 
     .btn.primary {
       background: var(--accent);
-      color: white;
+      color: #fff;
     }
 
     .btn.secondary {
-      background: white;
+      background: #fff;
       color: var(--accent);
     }
 
@@ -164,44 +169,78 @@
       padding: 28px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       gap: 18px;
+      justify-content: space-between;
     }
 
     .profile-wrap {
       text-align: center;
-      margin-bottom: 14px;
     }
 
     .profile-photo {
       width: 150px;
       height: 150px;
+      margin: 0 auto 14px;
       border-radius: 50%;
       object-fit: cover;
       object-position: center;
-      display: block;
-      margin: 0 auto 14px;
-      border: 4px solid white;
-      box-shadow: 0 10px 28px rgba(20, 40, 80, 0.18);
-      background: #e9eef5;
-    }
-
-    .photo-note {
-      font-size: 0.92rem;
-      color: var(--muted);
-      line-height: 1.5;
+      border: 4px solid #fff;
+      box-shadow: 0 10px 28px rgba(18, 44, 78, 0.18);
+      background: #e7edf5;
     }
 
     .mini-title {
+      margin-bottom: 8px;
       font-size: 0.82rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: var(--muted);
-      margin-bottom: 8px;
+    }
+
+    .meta, .small-note {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--line);
+      font-size: 0.92rem;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .stat {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.8);
+      border: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.35rem;
+      line-height: 1.1;
+      margin-bottom: 4px;
+      color: var(--accent);
     }
 
     .section {
-      padding: 16px 0 6px;
+      padding: 14px 0 6px;
     }
 
     .section-card {
@@ -213,6 +252,11 @@
       margin: 0 0 18px;
       font-size: 1.55rem;
       letter-spacing: -0.02em;
+    }
+
+    h3 {
+      margin: 0 0 6px;
+      font-size: 1.03rem;
     }
 
     .grid-2 {
@@ -227,46 +271,41 @@
       border-top: 1px solid var(--line);
     }
 
-    .item h3 {
-      margin: 0 0 6px;
-      font-size: 1.02rem;
-    }
-
-    .meta {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 6px;
-    }
-
     ul.clean {
       margin: 0;
       padding-left: 18px;
     }
 
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+    .timeline {
+      display: grid;
+      gap: 14px;
     }
 
-    .tag {
-      padding: 9px 12px;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      font-size: 0.92rem;
-      color: var(--text);
+    .timeline-item {
+      padding: 16px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .timeline-item:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .pub-list .item p,
+    .project-list .item p {
+      margin: 6px 0 0;
     }
 
     .footer {
-      padding: 26px 0 42px;
+      padding: 28px 0 44px;
       color: var(--muted);
       font-size: 0.95rem;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 920px) {
       .hero-grid,
-      .grid-2 {
+      .grid-2,
+      .stats {
         grid-template-columns: 1fr;
       }
 
@@ -279,17 +318,17 @@
 
     @media (max-width: 640px) {
       .nav-inner {
-        align-items: flex-start;
         flex-direction: column;
+        align-items: flex-start;
       }
 
       .hero {
-        padding-top: 32px;
+        padding-top: 34px;
       }
 
       .profile-photo {
-        width: 130px;
-        height: 130px;
+        width: 128px;
+        height: 128px;
       }
     }
   </style>
@@ -300,10 +339,10 @@
       <div class="brand">Huitian Liu</div>
       <div class="nav-links">
         <a href="#about">About</a>
-        <a href="#research">Education & Skills</a>
+        <a href="#research">Research</a>
         <a href="#publications">Publications</a>
         <a href="#projects">Projects</a>
-        <a href="#awards">Awards</a>
+        <a href="#activities">Activities</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -315,26 +354,49 @@
         <div class="eyebrow">Academic Homepage</div>
         <h1>Huitian Liu</h1>
         <p class="subtitle">
-          Hold a Ph.D. in Transportation Engineering and possess a solid foundation in transportation system analysis, environmental impact assessment, and data modeling research. Previously conducted a one-year joint Ph.D. research project at University College Dublin (UCD) in Ireland, gaining valuable experience in international research collaboration and academic exchange. 
-Research interests include life cycle assessment, low-carbon transportation, climate change, analysis of transportation carbon emissions, the application of machine learning in carbon emission accounting and forecasting, and environmental policy analysis. Have long focused on the green and low-carbon transition of transportation systems and responses to climate change, particularly the lifecycle carbon emissions of new energy vehicles. Committed to integrating quantitative models, data-driven methods, and policy evaluation tools to provide scientific evidence and decision-making support for the development of new energy vehicles, energy conservation and emissions reduction in the transportation sector, and sustainable development. 
-Possess strong skills in scientific writing, project management, and independent research, and look forward to further expanding research in the interdisciplinary field of transportation, energy, and the environment during the postdoctoral phase.  
-.
+          PhD Candidate in Transportation Engineering · Chang’an University · Joint PhD Research Experience at University College Dublin
         </p>
+
+        <div class="hero-summary">
+          <p>
+            I am a final-year PhD candidate in Transportation Engineering at Chang’an University, with research experience at University College Dublin in Ireland. My work focuses on transport decarbonisation, life-cycle assessment of passenger vehicles, and data-driven analysis for carbon accounting and policy evaluation.
+          </p>
+          <p>
+            My current research combines life-cycle modelling, machine learning, scenario analysis, and regional assessment to better understand the environmental impacts of new energy vehicles and to support evidence-based transport policy.
+          </p>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <strong>10+</strong>
+            <span>Publications</span>
+          </div>
+          <div class="stat">
+            <strong>3</strong>
+            <span>Core Research Themes</span>
+          </div>
+          <div class="stat">
+            <strong>2026</strong>
+            <span>Expected Graduation</span>
+          </div>
+        </div>
+
         <div class="cta-row">
           <a class="btn primary" href="mailto:huitian.liu@chd.edu.cn">Email Me</a>
-          <a class="btn secondary" href="#publications">View Publications</a>
+          <a class="btn secondary" href="#publications">Selected Publications</a>
+          <a class="btn secondary" href="https://linkedin.com/in/huitian-liu-8a392435a" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </section>
 
       <aside class="card hero-side">
         <div>
           <div class="profile-wrap">
-            <img src="images/huitian-liu.png" alt="Huitian Liu" class="profile-photo">
+            <img src="images/huitian-liu.png" alt="Huitian Liu" class="profile-photo" />
           </div>
 
           <div class="mini-title">Current Position</div>
-          <div>Final-year PhD candidate</div>
-          <div class="meta">College of Transportation Engineering, Chang’an University</div>
+          <div>PhD Candidate in Transportation Engineering</div>
+          <div class="meta">Chang’an University, Xi’an, China</div>
           <div class="meta">Expected graduation: June 2026</div>
         </div>
 
@@ -343,11 +405,18 @@ Possess strong skills in scientific writing, project management, and independent
           <div class="tag-list">
             <span class="tag">Transport decarbonisation</span>
             <span class="tag">Life-cycle assessment</span>
-            <span class="tag">Vehicle carbon emissions</span>
-            <span class="tag">Transport policy</span>
+            <span class="tag">New energy vehicles</span>
             <span class="tag">Machine learning</span>
-            <span class="tag">Climate change</span>
+            <span class="tag">Carbon accounting</span>
+            <span class="tag">Policy evaluation</span>
           </div>
+        </div>
+
+        <div>
+          <div class="mini-title">Quick Links</div>
+          <div class="small-note"><a href="https://huitianliu.github.io/" target="_blank" rel="noopener">GitHub Pages</a></div>
+          <div class="small-note"><a href="mailto:huitian.liu@chd.edu.cn">huitian.liu@chd.edu.cn</a></div>
+          <div class="small-note">Xi’an, Shaanxi, China</div>
         </div>
       </aside>
     </div>
@@ -358,10 +427,10 @@ Possess strong skills in scientific writing, project management, and independent
       <div class="card section-card">
         <h2>About</h2>
         <p>
-          I am a final-year PhD candidate in the College of Transportation Engineering at Chang’an University,
-          supervised by Prof. Dawei Hu. My research focuses on life-cycle carbon emission measurement of vehicles,
-          carbon accounting for road transport systems, and policy analysis related to fuel vehicle restriction
-          and transport decarbonisation.
+          My research is centred on sustainable transportation systems and the low-carbon transition of road transport. I am particularly interested in the life-cycle environmental impacts of passenger vehicles, multi-pollutant assessment, regional differences in energy systems, and the application of intelligent data-driven methods to transport carbon emission analysis.
+        </p>
+        <p>
+          Through my doctoral work, I have developed experience in combining transport engineering, environmental systems analysis, and quantitative modelling. I aim to continue building interdisciplinary research at the intersection of transportation, energy, environment, and public policy.
         </p>
       </div>
     </section>
@@ -369,100 +438,165 @@ Possess strong skills in scientific writing, project management, and independent
     <section id="research" class="section">
       <div class="grid-2">
         <div class="card section-card">
-          <h2>Education</h2>
-          <div class="item">
-            <h3>Chang’an University</h3>
-            <div class="meta">Sep 2019 – Jun 2026 · Xi’an, China</div>
-            <div>Master and PhD in Transport Planning and Management</div>
-            <div class="meta">General GPA: 88.21/100 (3.74/4.0) · Ranking: 3/7</div>
-          </div>
-          <div class="item">
-            <h3>Shandong University of Science and Technology</h3>
-            <div class="meta">Sep 2015 – Jul 2019 · Qingdao, China</div>
-            <div>B.E. in  Logistics Engineering</div>
-            <div class="meta">General GPA: 87.11/100 (3.63/4.0) · Ranking: 5/46</div>
+          <h2>Academic Background</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <h3>PhD in Transportation Engineering</h3>
+              <div class="meta">Chang’an University · 2021 – 2026 · Xi’an, China</div>
+            </div>
+            <div class="timeline-item">
+              <h3>Joint PhD Research</h3>
+              <div class="meta">University College Dublin · 2021 – 2022 · Dublin, Ireland</div>
+            </div>
+            <div class="timeline-item">
+              <h3>Master’s Study in Logistics Engineering</h3>
+              <div class="meta">Chang’an University · 2019 – 2021 · Xi’an, China</div>
+            </div>
+            <div class="timeline-item">
+              <h3>BSc in Logistics Engineering</h3>
+              <div class="meta">Shandong University of Science and Technology · 2015 – 2019 · Qingdao, China</div>
+            </div>
           </div>
         </div>
 
         <div class="card section-card">
-          <h2>Skills</h2>
-          <div class="tag-list">
-            <span class="tag">Python</span>
-            <span class="tag">MATLAB</span>
-            <span class="tag">GaBi</span>
-            <span class="tag">Simapor</span>
-            <span class="tag">GREET</span>
-            <span class="tag">LEAP</span>
-            <span class="tag">OpenLCA</span>
-            <span class="tag">CET-6 English</span>
+          <h2>Research Themes & Skills</h2>
+          <div class="item">
+            <h3>Sustainable Transportation and Low-Carbon Development</h3>
+            <p>Transport decarbonisation pathways, emissions accounting, mitigation strategies, and sustainable mobility transitions.</p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="section">
-      <div class="card section-card">
-        <h2>Selected Projects</h2>
-        <div class="item">
-          <h3>Life Cycle Carbon Emission Measurement of Vehicles and Analysis of Fuel Vehicle Purchase Restriction Policy</h3>
-          <div class="meta">Doctoral Thesis</div>
-          <div>
-            Analysis of carbon emissions from production to end-of-life, together with programme research
-            based on policy objectives.
+          <div class="item">
+            <h3>Artificial Intelligence and Data-Driven Transport Analysis</h3>
+            <p>Machine learning and quantitative methods for carbon prediction, monitoring, and decision support in transport systems.</p>
           </div>
-        </div>
-        <div class="item">
-          <h3>Carbon Emission Measurement Method for Road Transport Vehicles in Xi’an City and the Policy of Banning the Sale of Fuel Cars</h3>
-          <div>
-            Spatial measurement analysis of road transport carbon emissions in Xi’an and analysis of Xi’an’s
-            fuel car ban policy.
+          <div class="item">
+            <h3>Life-Cycle Assessment and Policy Evaluation</h3>
+            <p>Full life-cycle environmental assessment of new energy vehicles and evidence-based evaluation of transport policies.</p>
+          </div>
+          <div class="item">
+            <div class="tag-list">
+              <span class="tag">Python</span>
+              <span class="tag">MATLAB</span>
+              <span class="tag">GaBi</span>
+              <span class="tag">SimaPro</span>
+              <span class="tag">GREET</span>
+              <span class="tag">OpenLCA</span>
+              <span class="tag">LEAP</span>
+              <span class="tag">SPSS</span>
+              <span class="tag">Origin</span>
+              <span class="tag">Visio</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <section id="publications" class="section">
-      <div class="card section-card">
-        <h2>Publications</h2>
+      <div class="card section-card pub-list">
+        <h2>Selected Publications</h2>
         <div class="item">
-          <h3>Construction and Analysis of Transportation Carbon Emission Prediction Model Based on Machine Learning</h3>
-          <div class="meta">Huitian Liu &amp; Dawei Hu · Environmental Science, 2023 · Under review</div>
+          <h3>A Multi-Pollutant Life Cycle Assessment and Regional Index Framework for Battery Electric Vehicle Deployment in China</h3>
+          <div class="meta">Huitian Liu, Dawei Hu, Luke Kelleher, Liming Wang · The International Journal of Life Cycle Assessment · 2026 · Accepted</div>
         </div>
         <div class="item">
-          <h3>Carbon Emission Measurement Method of Road Transport Vehicles and Prohibition Policy Analysis of Fuel Vehicle</h3>
-          <div class="meta">Huitian Liu &amp; Dawei Hu · Transport Research, 2022</div>
-          <div>DOI: 10.16503/j.cnki.2095-9931.2022.06.005</div>
+          <h3>A Study on Greenhouse Gas Emissions from Chinese Passenger Vehicles Based on Machine Learning Models and Life Cycle Assessment</h3>
+          <div class="meta">Huitian Liu, Shuoshuo Xu, Luke Kelleher · Journal of Cleaner Production · 2026 · Under revision</div>
         </div>
         <div class="item">
-          <h3>Vulnerability Analysis of Highway Networks in Shaanxi Province Based on Complex Networks</h3>
-          <div class="meta">Bo Li, Zhizheng Li &amp; Huitian Liu · Journal of Chongqing Jiaotong University, 2022</div>
+          <h3>Analysis and Estimation of Carbon Emissions from Hybrid Vehicles Under Different Operating Modes Based on Actual Data</h3>
+          <div class="meta">Huitian Liu, Dawei Hu, Zhaowen Qiu, Jian Du, Luke Kelleher · Transportation Research Part D: Transport and Environment · 2026 · Submitted</div>
         </div>
         <div class="item">
-          <h3>Research on the Truck-UAV Joint Distribution Route in the Initial Stage of Emergency Response</h3>
-          <div class="meta">Dawei Hu, Shipeng Zhang, Huitian Liu &amp; Yin Wang · Journal of Chang’an University, 2022 · Under review</div>
+          <h3>Synergistic and Substitutive Pathways for Sustainable Production and Consumption in China’s Passenger Vehicle Transition: A Dynamic Multi-Life-Cycle Assessment</h3>
+          <div class="meta">Huitian Liu, Dawei Hu, Luke Kelleher · Sustainable Production and Consumption · 2026</div>
+          <p>DOI: 10.1016/j.spc.2026.01.015</p>
+        </div>
+        <div class="item">
+          <h3>Life Cycle Assessment: Driving Strategies for Promoting Electric Vehicles in China</h3>
+          <div class="meta">Huitian Liu, Dawei Hu, Luke Kelleher, Liming Wang · International Journal of Sustainable Transportation · 2024</div>
+          <p>DOI: 10.1080/15568318.2024.2410362</p>
+        </div>
+        <div class="item">
+          <h3>Construction and Analysis of Machine Learning Based Transportation Carbon Emission Prediction Model</h3>
+          <div class="meta">Huitian Liu, Dawei Hu · Environmental Science · 2024 · In Chinese</div>
+          <p>DOI: 10.13227/j.hjkx.202305234</p>
+        </div>
+        <div class="item">
+          <h3>Analysis of Emissions Reduction Effects of Alternative Strategies for Internal Combustion Engine Vehicles under Different Ban Times</h3>
+          <div class="meta">Huitian Liu, Dawei Hu · COTA International Conference of Transportation Professionals · 2024</div>
+          <p>DOI: 10.1061/9780784485484.305</p>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section id="projects" class="section">
+      <div class="card section-card project-list">
+        <h2>Research Projects</h2>
+        <div class="item">
+          <h3>Life Cycle Carbon Emission Measurement of Vehicles and Analysis of Fuel Vehicle Purchase Restriction Policy</h3>
+          <div class="meta">Chang’an University Graduate Research Practice Project · Mar 2022 – Nov 2022</div>
+          <p>Analysed vehicle carbon emissions from production to end-of-life stages and examined policy implications of fuel vehicle purchase restrictions.</p>
+        </div>
+        <div class="item">
+          <h3>Calculation of Full-Life-Cycle Carbon Emissions from Freight Vehicles and Analysis of Purchase Restrictions on Gasoline-Powered Vehicles</h3>
+          <div class="meta">China Society of Logistics / China Federation of Logistics and Purchasing · Apr 2022 – Aug 2022</div>
+          <p>Evaluated direct and indirect CO₂ emissions from freight transport across the full life cycle and explored carbon reduction pathways.</p>
+        </div>
+        <div class="item">
+          <h3>Program for Cultivating Innovative Talent in the Sustainable Development of Road Transport Infrastructure in China and Europe</h3>
+          <div class="meta">China Scholarship Council Joint PhD Project · Dec 2023 – Dec 2024</div>
+          <p>Developed life-cycle carbon emission models for new energy vehicles and contributed to policy-oriented environmental performance evaluation.</p>
+        </div>
+        <div class="item">
+          <h3>Carbon Emission Measurement Method for Road Transport Vehicles in Xi’an City and the Policy of Banning the Sale of Fuel Cars</h3>
+          <div class="meta">Xi’an Municipal Science and Technology Program Project · Jul 2022 – Mar 2023</div>
+          <p>Supported spatial analysis of urban road transport carbon emissions and participated in policy research on fuel vehicle sales restrictions.</p>
+        </div>
+        <div class="item">
+          <h3>A Study on Multi-Period Site Selection and Charging Scheduling Optimisation for All-Electric Bus Charging Stations</h3>
+          <div class="meta">Shaanxi Provincial Basic Research Project · Jan 2021 – Dec 2023</div>
+          <p>Contributed to charging station siting, capacity planning, and solution methods for electric bus systems.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="activities" class="section">
       <div class="grid-2">
-        <div id="awards" class="card section-card">
-          <h2>Awards</h2>
-          <ul class="clean">
-            <li>Second Class Scholarship for Undergraduates (Top 20%), 2016, 2017, 2018</li>
-            <li>Second Class Scholarship for Masters (Top 20%), 2020</li>
-            <li>Second Class Scholarship for PhD (Top 20%), 2021</li>
-            <li>Second Class Scholarship for PhD (Top 20%), 2022</li>
-          </ul>
+        <div class="card section-card">
+          <h2>Conference Activities</h2>
+          <div class="item">
+            <h3>Oral Presentations</h3>
+            <ul class="clean">
+              <li>Civil Engineering Research in Ireland 2024 (Ireland)</li>
+              <li>The 24th COTA International Conference of Transportation Professionals, 2024 (China)</li>
+              <li>World Transport Convention 2022 (China)</li>
+            </ul>
+          </div>
+          <div class="item">
+            <h3>Poster Presentations</h3>
+            <ul class="clean">
+              <li>The 26th COTA International Conference of Transportation Professionals</li>
+              <li>Transport Research Arena 2024 (Ireland)</li>
+              <li>World Transport Convention 2023 (China)</li>
+            </ul>
+          </div>
         </div>
 
         <div class="card section-card">
-          <h2>Conference</h2>
+          <h2>Awards & Referees</h2>
           <div class="item">
-            <h3>World Transport Convention</h3>
-            <div>
-              An OPEM model-based approach to measuring carbon emissions from road transport vehicles in China.
-            </div>
+            <h3>Awards</h3>
+            <ul class="clean">
+              <li>Second Class Scholarship for Undergraduates, 2016–2018</li>
+              <li>Second Class Scholarship for Master’s Students, 2020</li>
+              <li>Second Class Scholarship for PhD Students, 2021–2022</li>
+            </ul>
+          </div>
+          <div class="item">
+            <h3>Referees</h3>
+            <p><strong>Prof. Dawei Hu</strong> · Chang’an University · <a href="mailto:dwhu@chd.edu.cn">dwhu@chd.edu.cn</a></p>
+            <p><strong>Dr. Luke Kelleher</strong> · University College Dublin · <a href="mailto:luke.kelleher@ucd.ie">luke.kelleher@ucd.ie</a></p>
+            <p><strong>Prof. Liming Wang</strong> · University College Dublin · <a href="mailto:liming.wang@ucd.ie">liming.wang@ucd.ie</a></p>
           </div>
         </div>
       </div>
@@ -472,19 +606,20 @@ Possess strong skills in scientific writing, project management, and independent
       <div class="card section-card">
         <h2>Contact</h2>
         <p>
-          <strong>Email:</strong> <a href="mailto:huitian.liu@chd.edu.cn">huitian.liu@chd.edu.cn</a><br>
-          <strong>Phone:</strong> +86-15902956628<br>
-          <strong>Address:</strong> Middle part of the South 2nd Ring Road, Xi’an 710064, P.R. China
+          <strong>Email:</strong> <a href="mailto:huitian.liu@chd.edu.cn">huitian.liu@chd.edu.cn</a><br />
+          <strong>Institution:</strong> Chang’an University, Xi’an, Shaanxi, China<br />
+          <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/huitian-liu-8a392435a" target="_blank" rel="noopener">linkedin.com/in/huitian-liu-8a392435a</a><br />
+          <strong>GitHub Pages:</strong> <a href="https://huitianliu.github.io/" target="_blank" rel="noopener">huitianliu.github.io</a>
         </p>
-        <p>
-          This site is a simple academic homepage designed for GitHub Pages and easy long-term maintenance.
+        <p class="small-note">
+          This page is designed for GitHub Pages and can be maintained as a single HTML file for easy future updates.
         </p>
       </div>
     </section>
   </main>
 
   <footer class="container footer">
-    <div>© 2026 Huitian Liu · Academic website</div>
+    <div>© 2026 Huitian Liu · Academic Homepage</div>
   </footer>
 </body>
 </html>
